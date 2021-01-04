@@ -147,7 +147,7 @@ extension AssetsManager {
             completion(true)
         } else {
             if #available(iOS 14, *) {
-                PHPhotoLibrary.requestAuthorization(for: .addOnly, handler: { (status) in
+                PHPhotoLibrary.requestAuthorization(for: .readWrite, handler: { (status) in
                     DispatchQueue.main.async {
                         switch status {
                         case .authorized:
